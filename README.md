@@ -11,6 +11,14 @@ Simple proof of concept of blue-green-deployment strategy with:
 
 NOTE: this was developed on windows with cygwin (not tested on linux or OSX).
 
+Requirements:
+
+* Cygwin ( https://cygwin.com ) with:
+ * bash
+ * curl
+* Go compiler ( http://golang.org )
+* Nginx ( http://nginx.com/ )
+
 You can override the path variables (nginx conf dir & reload command) easily by creating a file called `deploy-conf.local` and setting the appropriate variables in there again.
 
 	# in cygwin
@@ -50,3 +58,11 @@ Think of this case:
 * switch proxy back to using green backend
 * now you have to deploy to blue backend again, although this was the last one that was deployed
 
+## Blue-Green Deployment Strategy
+
+Some links with more information / examples
+
+* http://martinfowler.com/bliki/BlueGreenDeployment.html
+* http://sunitspace.blogspot.co.at/2013/10/blue-green-deployment.html
+* http://dev.otto.de/2013/08/06/blue-green-deployment/ [GERMAN]
+* http://blog.figmentengine.com/2010/06/blue-green-deployment-with-high-volume.html

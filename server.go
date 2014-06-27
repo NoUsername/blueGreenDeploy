@@ -13,7 +13,7 @@ func init() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<html><body>Hello from %v</body></html>", serverMessage)
+	fmt.Fprintf(w, "<html><body><h1>Server running</h1><p>%v</p></body></html>", serverMessage)
 }
 
 func main() {

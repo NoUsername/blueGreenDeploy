@@ -25,6 +25,9 @@ PORT="8081"
 if [ "$1" == "green" ]; then
   BACKEND="green"
   PORT="8082"
+elif [ "$1" != "blue" ]; then
+  echo "only 'blue' or 'green' allowed"
+  exit 1
 fi
 
 function buildService {
@@ -36,7 +39,7 @@ function deployService {
   cp -f server.exe $BACKEND
   cd $BACKEND
   # note here could be 
-  bash -c "./server.exe -port ${PORT} -message 'SERVER hello from ${BACKEND} backend'" &
+  bash -c "./server.exe -port ${PORT} -message 'Hello from the <span style=\"color:${BACKEND}\">${BACKEND}</span> backend.'" &
   cd $DEFAULT_DIR
 }
 
